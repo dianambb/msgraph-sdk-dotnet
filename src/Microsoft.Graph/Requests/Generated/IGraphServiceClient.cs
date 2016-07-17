@@ -20,6 +20,26 @@ namespace Microsoft.Graph
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
     
         /// <summary>
+        /// Gets the GraphServiceApplications request builder.
+        /// </summary>
+        IGraphServiceApplicationsCollectionRequestBuilder Applications { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAdministrativeUnits request builder.
+        /// </summary>
+        IGraphServiceAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppRoleAssignments request builder.
+        /// </summary>
+        IGraphServiceAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceContacts request builder.
+        /// </summary>
+        IGraphServiceContactsCollectionRequestBuilder Contacts { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDevices request builder.
         /// </summary>
         IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
@@ -40,9 +60,34 @@ namespace Microsoft.Graph
         IGraphServiceDirectoryRoleTemplatesCollectionRequestBuilder DirectoryRoleTemplates { get; }
     
         /// <summary>
+        /// Gets the GraphServiceDirectorySettingTemplates request builder.
+        /// </summary>
+        IGraphServiceDirectorySettingTemplatesCollectionRequestBuilder DirectorySettingTemplates { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceOrganization request builder.
         /// </summary>
         IGraphServiceOrganizationCollectionRequestBuilder Organization { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// </summary>
+        IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceScopedRoleMemberships request builder.
+        /// </summary>
+        IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceSettings request builder.
+        /// </summary>
+        IGraphServiceSettingsCollectionRequestBuilder Settings { get; }
     
         /// <summary>
         /// Gets the GraphServiceSubscribedSkus request builder.
@@ -55,14 +100,74 @@ namespace Microsoft.Graph
         IGraphServiceUsersCollectionRequestBuilder Users { get; }
     
         /// <summary>
+        /// Gets the GraphServicePolicies request builder.
+        /// </summary>
+        IGraphServicePoliciesCollectionRequestBuilder Policies { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceWorkbooks request builder.
+        /// </summary>
+        IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
         IGraphServiceDrivesCollectionRequestBuilder Drives { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTasks request builder.
+        /// </summary>
+        IGraphServiceTasksCollectionRequestBuilder Tasks { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePlans request builder.
+        /// </summary>
+        IGraphServicePlansCollectionRequestBuilder Plans { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceBuckets request builder.
+        /// </summary>
+        IGraphServiceBucketsCollectionRequestBuilder Buckets { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
         IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityRiskEvents request builder.
+        /// </summary>
+        IGraphServiceIdentityRiskEventsCollectionRequestBuilder IdentityRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceImpossibleTravelRiskEvents request builder.
+        /// </summary>
+        IGraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder ImpossibleTravelRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceLeakedCredentialsRiskEvents request builder.
+        /// </summary>
+        IGraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder LeakedCredentialsRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAnonymousIpRiskEvents request builder.
+        /// </summary>
+        IGraphServiceAnonymousIpRiskEventsCollectionRequestBuilder AnonymousIpRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceSuspiciousIpRiskEvents request builder.
+        /// </summary>
+        IGraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder SuspiciousIpRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceUnfamiliarLocationRiskEvents request builder.
+        /// </summary>
+        IGraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder UnfamiliarLocationRiskEvents { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceMalwareRiskEvents request builder.
+        /// </summary>
+        IGraphServiceMalwareRiskEventsCollectionRequestBuilder MalwareRiskEvents { get; }
     
         /// <summary>
         /// Gets the GraphServiceMe request builder.

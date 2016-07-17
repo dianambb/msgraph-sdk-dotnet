@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        MessageCreateReplyRequestBody RequestBody { get; }
+
+        /// <summary>
         /// Issues the POST request.
         /// </summary>
         System.Threading.Tasks.Task<Message> PostAsync();

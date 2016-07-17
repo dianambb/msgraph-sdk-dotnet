@@ -30,5 +30,12 @@ namespace Microsoft.Graph
         /// <returns>The User.</returns>
         System.Threading.Tasks.Task<User> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IUserWithReferenceRequest Select(string value);
+
     }
 }

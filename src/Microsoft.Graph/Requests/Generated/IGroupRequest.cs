@@ -71,5 +71,12 @@ namespace Microsoft.Graph
         /// <returns>The updated Group.</returns>
         System.Threading.Tasks.Task<Group> UpdateAsync(Group groupToUpdate, CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IGroupRequest Select(string value);
+
     }
 }

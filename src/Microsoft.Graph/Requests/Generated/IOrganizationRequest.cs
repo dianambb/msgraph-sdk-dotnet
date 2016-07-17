@@ -71,5 +71,12 @@ namespace Microsoft.Graph
         /// <returns>The updated Organization.</returns>
         System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IOrganizationRequest Select(string value);
+
     }
 }

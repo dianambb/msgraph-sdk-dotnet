@@ -21,14 +21,14 @@ namespace Microsoft.Graph
         public GraphServiceClient(
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
-            : this("https://graph.microsoft.com/v1.0", authenticationProvider, httpProvider)
+            : this("https://graph.microsoft.com/beta", authenticationProvider, httpProvider)
         {
         }
 
         /// <summary>
         /// Instantiates a new GraphServiceClient.
         /// </summary>
-        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/v1.0."</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta".</param>
         /// <param name="authenticationProvider">The <see cref="IAuthenticationProvider"/> for authenticating request messages.</param>
         /// <param name="httpProvider">The <see cref="IHttpProvider"/> for sending requests.</param>
         public GraphServiceClient(
@@ -47,6 +47,50 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceApplications request builder.
+        /// </summary>
+        public IGraphServiceApplicationsCollectionRequestBuilder Applications
+        {
+            get
+            {
+                return new GraphServiceApplicationsCollectionRequestBuilder(this.BaseUrl + "/applications", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAdministrativeUnits request builder.
+        /// </summary>
+        public IGraphServiceAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits
+        {
+            get
+            {
+                return new GraphServiceAdministrativeUnitsCollectionRequestBuilder(this.BaseUrl + "/administrativeUnits", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppRoleAssignments request builder.
+        /// </summary>
+        public IGraphServiceAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
+        {
+            get
+            {
+                return new GraphServiceAppRoleAssignmentsCollectionRequestBuilder(this.BaseUrl + "/appRoleAssignments", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceContacts request builder.
+        /// </summary>
+        public IGraphServiceContactsCollectionRequestBuilder Contacts
+        {
+            get
+            {
+                return new GraphServiceContactsCollectionRequestBuilder(this.BaseUrl + "/contacts", this);
             }
         }
     
@@ -95,6 +139,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceDirectorySettingTemplates request builder.
+        /// </summary>
+        public IGraphServiceDirectorySettingTemplatesCollectionRequestBuilder DirectorySettingTemplates
+        {
+            get
+            {
+                return new GraphServiceDirectorySettingTemplatesCollectionRequestBuilder(this.BaseUrl + "/directorySettingTemplates", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceOrganization request builder.
         /// </summary>
         public IGraphServiceOrganizationCollectionRequestBuilder Organization
@@ -102,6 +157,50 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceOrganizationCollectionRequestBuilder(this.BaseUrl + "/organization", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// </summary>
+        public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
+        {
+            get
+            {
+                return new GraphServiceOauth2PermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/oauth2PermissionGrants", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceScopedRoleMemberships request builder.
+        /// </summary>
+        public IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships
+        {
+            get
+            {
+                return new GraphServiceScopedRoleMembershipsCollectionRequestBuilder(this.BaseUrl + "/scopedRoleMemberships", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
+        {
+            get
+            {
+                return new GraphServiceServicePrincipalsCollectionRequestBuilder(this.BaseUrl + "/servicePrincipals", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceSettings request builder.
+        /// </summary>
+        public IGraphServiceSettingsCollectionRequestBuilder Settings
+        {
+            get
+            {
+                return new GraphServiceSettingsCollectionRequestBuilder(this.BaseUrl + "/settings", this);
             }
         }
     
@@ -128,6 +227,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePolicies request builder.
+        /// </summary>
+        public IGraphServicePoliciesCollectionRequestBuilder Policies
+        {
+            get
+            {
+                return new GraphServicePoliciesCollectionRequestBuilder(this.BaseUrl + "/policies", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceWorkbooks request builder.
+        /// </summary>
+        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
+        {
+            get
+            {
+                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
         public IGraphServiceDrivesCollectionRequestBuilder Drives
@@ -139,6 +260,39 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTasks request builder.
+        /// </summary>
+        public IGraphServiceTasksCollectionRequestBuilder Tasks
+        {
+            get
+            {
+                return new GraphServiceTasksCollectionRequestBuilder(this.BaseUrl + "/tasks", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServicePlans request builder.
+        /// </summary>
+        public IGraphServicePlansCollectionRequestBuilder Plans
+        {
+            get
+            {
+                return new GraphServicePlansCollectionRequestBuilder(this.BaseUrl + "/plans", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceBuckets request builder.
+        /// </summary>
+        public IGraphServiceBucketsCollectionRequestBuilder Buckets
+        {
+            get
+            {
+                return new GraphServiceBucketsCollectionRequestBuilder(this.BaseUrl + "/buckets", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
         public IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions
@@ -146,6 +300,83 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceSubscriptionsCollectionRequestBuilder(this.BaseUrl + "/subscriptions", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceIdentityRiskEventsCollectionRequestBuilder IdentityRiskEvents
+        {
+            get
+            {
+                return new GraphServiceIdentityRiskEventsCollectionRequestBuilder(this.BaseUrl + "/identityRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceImpossibleTravelRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder ImpossibleTravelRiskEvents
+        {
+            get
+            {
+                return new GraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder(this.BaseUrl + "/impossibleTravelRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceLeakedCredentialsRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder LeakedCredentialsRiskEvents
+        {
+            get
+            {
+                return new GraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder(this.BaseUrl + "/leakedCredentialsRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAnonymousIpRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceAnonymousIpRiskEventsCollectionRequestBuilder AnonymousIpRiskEvents
+        {
+            get
+            {
+                return new GraphServiceAnonymousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/anonymousIpRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceSuspiciousIpRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder SuspiciousIpRiskEvents
+        {
+            get
+            {
+                return new GraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/suspiciousIpRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceUnfamiliarLocationRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder UnfamiliarLocationRiskEvents
+        {
+            get
+            {
+                return new GraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder(this.BaseUrl + "/unfamiliarLocationRiskEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceMalwareRiskEvents request builder.
+        /// </summary>
+        public IGraphServiceMalwareRiskEventsCollectionRequestBuilder MalwareRiskEvents
+        {
+            get
+            {
+                return new GraphServiceMalwareRiskEventsCollectionRequestBuilder(this.BaseUrl + "/malwareRiskEvents", this);
             }
         }
     

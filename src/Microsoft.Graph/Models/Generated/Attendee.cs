@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The type Attendee.
     /// </summary>
     [DataContract]
-    public partial class Attendee : Recipient
+    public partial class Attendee : AttendeeBase
     {
     
         /// <summary>
@@ -25,12 +25,6 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false, IsRequired = false)]
         public ResponseStatus Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false, IsRequired = false)]
-        public AttendeeType? Type { get; set; }
     
     }
 }

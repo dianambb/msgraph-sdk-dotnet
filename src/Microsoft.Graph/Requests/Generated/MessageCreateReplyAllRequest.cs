@@ -28,7 +28,14 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
             this.Method = "POST";
+            this.ContentType = "application/json";
+            this.RequestBody = new MessageCreateReplyAllRequestBody();
         }
+
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        public MessageCreateReplyAllRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -46,7 +53,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<Message> PostAsync(
             CancellationToken cancellationToken)
         {
-            return this.SendAsync<Message>(null, cancellationToken);
+            return this.SendAsync<Message>(this.RequestBody, cancellationToken);
         }
 
         /// <summary>

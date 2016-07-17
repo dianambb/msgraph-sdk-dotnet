@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         new IDriveItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        IWorkbookRequestBuilder Workbook { get; }
+
+        /// <summary>
         /// Gets the request builder for CreatedByUser.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
@@ -72,6 +78,17 @@ namespace Microsoft.Graph
         IDriveItemCreateLinkRequestBuilder CreateLink(
             string type,
             string scope = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemInvite.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
+        IDriveItemInviteRequestBuilder Invite(
+            IEnumerable<DriveRecipient> recipients,
+            bool? requireSignIn = null,
+            IEnumerable<string> roles = null,
+            bool? sendInvitation = null,
+            string message = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemCopy.

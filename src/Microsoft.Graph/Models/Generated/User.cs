@@ -207,6 +207,12 @@ namespace Microsoft.Graph
         public string UserType { get; set; }
     
         /// <summary>
+        /// Gets or sets mailbox settings.
+        /// </summary>
+        [DataMember(Name = "mailboxSettings", EmitDefaultValue = false, IsRequired = false)]
+        public MailboxSettings MailboxSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets about me.
         /// </summary>
         [DataMember(Name = "aboutMe", EmitDefaultValue = false, IsRequired = false)]
@@ -309,10 +315,22 @@ namespace Microsoft.Graph
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
     
         /// <summary>
+        /// Gets or sets scoped administrator of.
+        /// </summary>
+        [DataMember(Name = "scopedAdministratorOf", EmitDefaultValue = false, IsRequired = false)]
+        public IUserScopedAdministratorOfCollectionPage ScopedAdministratorOf { get; set; }
+    
+        /// <summary>
         /// Gets or sets messages.
         /// </summary>
         [DataMember(Name = "messages", EmitDefaultValue = false, IsRequired = false)]
         public IUserMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets joined groups.
+        /// </summary>
+        [DataMember(Name = "joinedGroups", EmitDefaultValue = false, IsRequired = false)]
+        public IUserJoinedGroupsCollectionPage JoinedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets mail folders.
@@ -351,6 +369,12 @@ namespace Microsoft.Graph
         public IUserEventsCollectionPage Events { get; set; }
     
         /// <summary>
+        /// Gets or sets people.
+        /// </summary>
+        [DataMember(Name = "people", EmitDefaultValue = false, IsRequired = false)]
+        public IUserPeopleCollectionPage People { get; set; }
+    
+        /// <summary>
         /// Gets or sets contacts.
         /// </summary>
         [DataMember(Name = "contacts", EmitDefaultValue = false, IsRequired = false)]
@@ -375,10 +399,52 @@ namespace Microsoft.Graph
         public ProfilePhoto Photo { get; set; }
     
         /// <summary>
+        /// Gets or sets photos.
+        /// </summary>
+        [DataMember(Name = "photos", EmitDefaultValue = false, IsRequired = false)]
+        public IUserPhotosCollectionPage Photos { get; set; }
+    
+        /// <summary>
         /// Gets or sets drive.
         /// </summary>
         [DataMember(Name = "drive", EmitDefaultValue = false, IsRequired = false)]
         public Drive Drive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets insights.
+        /// </summary>
+        [DataMember(Name = "insights", EmitDefaultValue = false, IsRequired = false)]
+        public OfficeGraphInsights Insights { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trending around.
+        /// </summary>
+        [DataMember(Name = "trendingAround", EmitDefaultValue = false, IsRequired = false)]
+        public IUserTrendingAroundCollectionPage TrendingAround { get; set; }
+    
+        /// <summary>
+        /// Gets or sets working with.
+        /// </summary>
+        [DataMember(Name = "workingWith", EmitDefaultValue = false, IsRequired = false)]
+        public IUserWorkingWithCollectionPage WorkingWith { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tasks.
+        /// </summary>
+        [DataMember(Name = "tasks", EmitDefaultValue = false, IsRequired = false)]
+        public IUserTasksCollectionWithReferencesPage Tasks { get; set; }
+    
+        /// <summary>
+        /// Gets or sets plans.
+        /// </summary>
+        [DataMember(Name = "plans", EmitDefaultValue = false, IsRequired = false)]
+        public IUserPlansCollectionWithReferencesPage Plans { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [DataMember(Name = "notes", EmitDefaultValue = false, IsRequired = false)]
+        public Notes Notes { get; set; }
     
     }
 }

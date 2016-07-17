@@ -28,10 +28,28 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets locationEmailAddress.
+        /// </summary>
+        [DataMember(Name = "locationEmailAddress", EmitDefaultValue = false, IsRequired = false)]
+        public string LocationEmailAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets address.
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false, IsRequired = false)]
         public PhysicalAddress Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets coordinates.
+        /// </summary>
+        [DataMember(Name = "coordinates", EmitDefaultValue = false, IsRequired = false)]
+        public OutlookGeoCoordinates Coordinates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locationUri.
+        /// </summary>
+        [DataMember(Name = "locationUri", EmitDefaultValue = false, IsRequired = false)]
+        public string LocationUri { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

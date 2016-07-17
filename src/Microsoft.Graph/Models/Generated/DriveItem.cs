@@ -183,6 +183,12 @@ namespace Microsoft.Graph
         public Package Package { get; set; }
     
         /// <summary>
+        /// Gets or sets workbook.
+        /// </summary>
+        [DataMember(Name = "workbook", EmitDefaultValue = false, IsRequired = false)]
+        public Workbook Workbook { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by user.
         /// </summary>
         [DataMember(Name = "createdByUser", EmitDefaultValue = false, IsRequired = false)]

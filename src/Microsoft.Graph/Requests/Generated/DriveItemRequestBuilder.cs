@@ -49,6 +49,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        public IWorkbookRequestBuilder Workbook
+        {
+            get
+            {
+                return new WorkbookRequestBuilder(this.AppendSegmentToRequestUrl("workbook"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CreatedByUser.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
@@ -133,6 +145,27 @@ namespace Microsoft.Graph
                 this.Client,
                 type,
                 scope);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemInvite.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
+        public IDriveItemInviteRequestBuilder Invite(
+            IEnumerable<DriveRecipient> recipients,
+            bool? requireSignIn = null,
+            IEnumerable<string> roles = null,
+            bool? sendInvitation = null,
+            string message = null)
+        {
+            return new DriveItemInviteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.invite"),
+                this.Client,
+                recipients,
+                requireSignIn,
+                roles,
+                sendInvitation,
+                message);
         }
 
         /// <summary>

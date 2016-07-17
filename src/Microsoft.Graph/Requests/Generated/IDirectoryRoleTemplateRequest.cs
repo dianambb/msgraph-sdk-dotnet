@@ -71,5 +71,12 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> UpdateAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IDirectoryRoleTemplateRequest Select(string value);
+
     }
 }

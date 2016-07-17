@@ -219,10 +219,28 @@ namespace Microsoft.Graph
         public IEnumerable<string> Children { get; set; }
     
         /// <summary>
+        /// Gets or sets flag.
+        /// </summary>
+        [DataMember(Name = "flag", EmitDefaultValue = false, IsRequired = false)]
+        public FollowupFlag Flag { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensions.
         /// </summary>
         [DataMember(Name = "extensions", EmitDefaultValue = false, IsRequired = false)]
         public IContactExtensionsCollectionPage Extensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IContactSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IContactMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets photo.

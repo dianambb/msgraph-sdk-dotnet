@@ -14,30 +14,30 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type UploadSession.
+    /// The type CopyStatusModel.
     /// </summary>
     [DataContract]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class UploadSession
+    public partial class CopyStatusModel
     {
     
         /// <summary>
-        /// Gets or sets uploadUrl.
+        /// Gets or sets id.
         /// </summary>
-        [DataMember(Name = "uploadUrl", EmitDefaultValue = false, IsRequired = false)]
-        public string UploadUrl { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false, IsRequired = false)]
+        public string Id { get; set; }
     
         /// <summary>
-        /// Gets or sets expirationDateTime.
+        /// Gets or sets status.
         /// </summary>
-        [DataMember(Name = "expirationDateTime", EmitDefaultValue = false, IsRequired = false)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false, IsRequired = false)]
+        public string Status { get; set; }
     
         /// <summary>
-        /// Gets or sets nextExpectedRanges.
+        /// Gets or sets createdDateTime.
         /// </summary>
-        [DataMember(Name = "nextExpectedRanges", EmitDefaultValue = false, IsRequired = false)]
-        public IEnumerable<string> NextExpectedRanges { get; set; }
+        [DataMember(Name = "createdDateTime", EmitDefaultValue = false, IsRequired = false)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

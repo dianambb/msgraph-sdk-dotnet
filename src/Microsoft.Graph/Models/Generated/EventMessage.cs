@@ -27,6 +27,42 @@ namespace Microsoft.Graph
         public MeetingMessageType? MeetingMessageType { get; set; }
     
         /// <summary>
+        /// Gets or sets start date time.
+        /// </summary>
+        [DataMember(Name = "startDateTime", EmitDefaultValue = false, IsRequired = false)]
+        public DateTimeTimeZone StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets end date time.
+        /// </summary>
+        [DataMember(Name = "endDateTime", EmitDefaultValue = false, IsRequired = false)]
+        public DateTimeTimeZone EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location.
+        /// </summary>
+        [DataMember(Name = "location", EmitDefaultValue = false, IsRequired = false)]
+        public Location Location { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = false, IsRequired = false)]
+        public EventType? Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrence.
+        /// </summary>
+        [DataMember(Name = "recurrence", EmitDefaultValue = false, IsRequired = false)]
+        public PatternedRecurrence Recurrence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is out of date.
+        /// </summary>
+        [DataMember(Name = "isOutOfDate", EmitDefaultValue = false, IsRequired = false)]
+        public bool? IsOutOfDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets event.
         /// </summary>
         [DataMember(Name = "event", EmitDefaultValue = false, IsRequired = false)]

@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         [DataMember(Name = "members", EmitDefaultValue = false, IsRequired = false)]
         public IDirectoryRoleMembersCollectionWithReferencesPage Members { get; set; }
     
+        /// <summary>
+        /// Gets or sets scoped administrators.
+        /// </summary>
+        [DataMember(Name = "scopedAdministrators", EmitDefaultValue = false, IsRequired = false)]
+        public IDirectoryRoleScopedAdministratorsCollectionPage ScopedAdministrators { get; set; }
+    
     }
 }
 

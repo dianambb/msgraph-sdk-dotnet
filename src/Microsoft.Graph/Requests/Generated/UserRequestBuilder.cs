@@ -133,6 +133,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ScopedAdministratorOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserScopedAdministratorOfCollectionRequestBuilder"/>.</returns>
+        public IUserScopedAdministratorOfCollectionRequestBuilder ScopedAdministratorOf
+        {
+            get
+            {
+                return new UserScopedAdministratorOfCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedAdministratorOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
@@ -141,6 +153,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for JoinedGroups.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedGroupsCollectionRequestBuilder"/>.</returns>
+        public IUserJoinedGroupsCollectionRequestBuilder JoinedGroups
+        {
+            get
+            {
+                return new UserJoinedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedGroups"), this.Client);
             }
         }
 
@@ -217,6 +241,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for People.
+        /// </summary>
+        /// <returns>The <see cref="IUserPeopleCollectionRequestBuilder"/>.</returns>
+        public IUserPeopleCollectionRequestBuilder People
+        {
+            get
+            {
+                return new UserPeopleCollectionRequestBuilder(this.AppendSegmentToRequestUrl("people"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Contacts.
         /// </summary>
         /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
@@ -265,6 +301,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
+        public IUserPhotosCollectionRequestBuilder Photos
+        {
+            get
+            {
+                return new UserPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Drive.
         /// </summary>
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
@@ -273,6 +321,78 @@ namespace Microsoft.Graph
             get
             {
                 return new DriveRequestBuilder(this.AppendSegmentToRequestUrl("drive"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
+        public IOfficeGraphInsightsRequestBuilder Insights
+        {
+            get
+            {
+                return new OfficeGraphInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrendingAround.
+        /// </summary>
+        /// <returns>The <see cref="IUserTrendingAroundCollectionRequestBuilder"/>.</returns>
+        public IUserTrendingAroundCollectionRequestBuilder TrendingAround
+        {
+            get
+            {
+                return new UserTrendingAroundCollectionRequestBuilder(this.AppendSegmentToRequestUrl("trendingAround"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkingWith.
+        /// </summary>
+        /// <returns>The <see cref="IUserWorkingWithCollectionRequestBuilder"/>.</returns>
+        public IUserWorkingWithCollectionRequestBuilder WorkingWith
+        {
+            get
+            {
+                return new UserWorkingWithCollectionRequestBuilder(this.AppendSegmentToRequestUrl("workingWith"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IUserTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserTasksCollectionWithReferencesRequestBuilder Tasks
+        {
+            get
+            {
+                return new UserTasksCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Plans.
+        /// </summary>
+        /// <returns>The <see cref="IUserPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserPlansCollectionWithReferencesRequestBuilder Plans
+        {
+            get
+            {
+                return new UserPlansCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("plans"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="INotesRequestBuilder"/>.</returns>
+        public INotesRequestBuilder Notes
+        {
+            get
+            {
+                return new NotesRequestBuilder(this.AppendSegmentToRequestUrl("notes"), this.Client);
             }
         }
     
@@ -319,6 +439,31 @@ namespace Microsoft.Graph
                 this.Client,
                 Message,
                 SaveToSentItems);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFindMeetingTimes.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
+        public IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
+            IEnumerable<AttendeeBase> Attendees = null,
+            LocationConstraint LocationConstraint = null,
+            TimeConstraint TimeConstraint = null,
+            TimeSpan? MeetingDuration = null,
+            Int32? MaxCandidates = null,
+            bool? IsOrganizerOptional = null,
+            bool? ReturnSuggestionHints = null)
+        {
+            return new UserFindMeetingTimesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findMeetingTimes"),
+                this.Client,
+                Attendees,
+                LocationConstraint,
+                TimeConstraint,
+                MeetingDuration,
+                MaxCandidates,
+                IsOrganizerOptional,
+                ReturnSuggestionHints);
         }
 
         /// <summary>

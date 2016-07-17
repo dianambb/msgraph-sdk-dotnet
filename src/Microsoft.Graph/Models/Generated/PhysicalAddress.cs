@@ -22,6 +22,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = false, IsRequired = false)]
+        public PhysicalAddressType? Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets postOfficeBox.
+        /// </summary>
+        [DataMember(Name = "postOfficeBox", EmitDefaultValue = false, IsRequired = false)]
+        public string PostOfficeBox { get; set; }
+    
+        /// <summary>
         /// Gets or sets street.
         /// </summary>
         [DataMember(Name = "street", EmitDefaultValue = false, IsRequired = false)]

@@ -71,5 +71,12 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryRole.</returns>
         System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IDirectoryRoleRequest Select(string value);
+
     }
 }

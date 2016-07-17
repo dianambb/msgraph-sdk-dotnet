@@ -72,10 +72,22 @@ namespace Microsoft.Graph
         IUserOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects { get; }
 
         /// <summary>
+        /// Gets the request builder for ScopedAdministratorOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserScopedAdministratorOfCollectionRequestBuilder"/>.</returns>
+        IUserScopedAdministratorOfCollectionRequestBuilder ScopedAdministratorOf { get; }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
         IUserMessagesCollectionRequestBuilder Messages { get; }
+
+        /// <summary>
+        /// Gets the request builder for JoinedGroups.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedGroupsCollectionRequestBuilder"/>.</returns>
+        IUserJoinedGroupsCollectionRequestBuilder JoinedGroups { get; }
 
         /// <summary>
         /// Gets the request builder for MailFolders.
@@ -114,6 +126,12 @@ namespace Microsoft.Graph
         IUserEventsCollectionRequestBuilder Events { get; }
 
         /// <summary>
+        /// Gets the request builder for People.
+        /// </summary>
+        /// <returns>The <see cref="IUserPeopleCollectionRequestBuilder"/>.</returns>
+        IUserPeopleCollectionRequestBuilder People { get; }
+
+        /// <summary>
         /// Gets the request builder for Contacts.
         /// </summary>
         /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
@@ -138,10 +156,52 @@ namespace Microsoft.Graph
         IProfilePhotoRequestBuilder Photo { get; }
 
         /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
+        IUserPhotosCollectionRequestBuilder Photos { get; }
+
+        /// <summary>
         /// Gets the request builder for Drive.
         /// </summary>
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
         IDriveRequestBuilder Drive { get; }
+
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
+        IOfficeGraphInsightsRequestBuilder Insights { get; }
+
+        /// <summary>
+        /// Gets the request builder for TrendingAround.
+        /// </summary>
+        /// <returns>The <see cref="IUserTrendingAroundCollectionRequestBuilder"/>.</returns>
+        IUserTrendingAroundCollectionRequestBuilder TrendingAround { get; }
+
+        /// <summary>
+        /// Gets the request builder for WorkingWith.
+        /// </summary>
+        /// <returns>The <see cref="IUserWorkingWithCollectionRequestBuilder"/>.</returns>
+        IUserWorkingWithCollectionRequestBuilder WorkingWith { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IUserTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserTasksCollectionWithReferencesRequestBuilder Tasks { get; }
+
+        /// <summary>
+        /// Gets the request builder for Plans.
+        /// </summary>
+        /// <returns>The <see cref="IUserPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserPlansCollectionWithReferencesRequestBuilder Plans { get; }
+
+        /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="INotesRequestBuilder"/>.</returns>
+        INotesRequestBuilder Notes { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -166,6 +226,19 @@ namespace Microsoft.Graph
         IUserSendMailRequestBuilder SendMail(
             Message Message,
             bool? SaveToSentItems = null);
+
+        /// <summary>
+        /// Gets the request builder for UserFindMeetingTimes.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
+        IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
+            IEnumerable<AttendeeBase> Attendees = null,
+            LocationConstraint LocationConstraint = null,
+            TimeConstraint TimeConstraint = null,
+            TimeSpan? MeetingDuration = null,
+            Int32? MaxCandidates = null,
+            bool? IsOrganizerOptional = null,
+            bool? ReturnSuggestionHints = null);
 
         /// <summary>
         /// Gets the request builder for UserReminderView.

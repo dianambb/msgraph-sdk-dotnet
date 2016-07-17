@@ -93,6 +93,12 @@ namespace Microsoft.Graph
         public string Visibility { get; set; }
     
         /// <summary>
+        /// Gets or sets access type.
+        /// </summary>
+        [DataMember(Name = "accessType", EmitDefaultValue = false, IsRequired = false)]
+        public GroupAccessType? AccessType { get; set; }
+    
+        /// <summary>
         /// Gets or sets allow external senders.
         /// </summary>
         [DataMember(Name = "allowExternalSenders", EmitDefaultValue = false, IsRequired = false)]
@@ -103,6 +109,12 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "autoSubscribeNewMembers", EmitDefaultValue = false, IsRequired = false)]
         public bool? AutoSubscribeNewMembers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is favorite.
+        /// </summary>
+        [DataMember(Name = "isFavorite", EmitDefaultValue = false, IsRequired = false)]
+        public bool? IsFavorite { get; set; }
     
         /// <summary>
         /// Gets or sets is subscribed by mail.
@@ -141,6 +153,12 @@ namespace Microsoft.Graph
         public IGroupOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [DataMember(Name = "settings", EmitDefaultValue = false, IsRequired = false)]
+        public IGroupSettingsCollectionPage Settings { get; set; }
+    
+        /// <summary>
         /// Gets or sets threads.
         /// </summary>
         [DataMember(Name = "threads", EmitDefaultValue = false, IsRequired = false)]
@@ -177,6 +195,12 @@ namespace Microsoft.Graph
         public ProfilePhoto Photo { get; set; }
     
         /// <summary>
+        /// Gets or sets photos.
+        /// </summary>
+        [DataMember(Name = "photos", EmitDefaultValue = false, IsRequired = false)]
+        public IGroupPhotosCollectionPage Photos { get; set; }
+    
+        /// <summary>
         /// Gets or sets accepted senders.
         /// </summary>
         [DataMember(Name = "acceptedSenders", EmitDefaultValue = false, IsRequired = false)]
@@ -193,6 +217,18 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "drive", EmitDefaultValue = false, IsRequired = false)]
         public Drive Drive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets plans.
+        /// </summary>
+        [DataMember(Name = "plans", EmitDefaultValue = false, IsRequired = false)]
+        public IGroupPlansCollectionWithReferencesPage Plans { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [DataMember(Name = "notes", EmitDefaultValue = false, IsRequired = false)]
+        public Notes Notes { get; set; }
     
     }
 }

@@ -125,6 +125,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        public IDirectoryRoleRequest Select(string value)
+        {
+            this.QueryOptions.Add(new QueryOption("$select", value));
+            return this;
+        }
+
+        /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
         /// <param name="directoryRoleToInitialize">The <see cref="DirectoryRole"/> with the collection properties to initialize.</param>
@@ -145,6 +156,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         directoryRoleToInitialize.Members.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (directoryRoleToInitialize.ScopedAdministrators != null && directoryRoleToInitialize.ScopedAdministrators.CurrentPage != null)
+                {
+                    directoryRoleToInitialize.ScopedAdministrators.AdditionalData = directoryRoleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    directoryRoleToInitialize.AdditionalData.TryGetValue("scopedAdministrators@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        directoryRoleToInitialize.ScopedAdministrators.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

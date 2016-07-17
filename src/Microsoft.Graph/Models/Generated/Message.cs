@@ -117,6 +117,12 @@ namespace Microsoft.Graph
         public string ConversationId { get; set; }
     
         /// <summary>
+        /// Gets or sets conversation index.
+        /// </summary>
+        [DataMember(Name = "conversationIndex", EmitDefaultValue = false, IsRequired = false)]
+        public byte[] ConversationIndex { get; set; }
+    
+        /// <summary>
         /// Gets or sets unique body.
         /// </summary>
         [DataMember(Name = "uniqueBody", EmitDefaultValue = false, IsRequired = false)]
@@ -159,6 +165,24 @@ namespace Microsoft.Graph
         public InferenceClassificationType? InferenceClassification { get; set; }
     
         /// <summary>
+        /// Gets or sets unsubscribe data.
+        /// </summary>
+        [DataMember(Name = "unsubscribeData", EmitDefaultValue = false, IsRequired = false)]
+        public IEnumerable<string> UnsubscribeData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unsubscribe enabled.
+        /// </summary>
+        [DataMember(Name = "unsubscribeEnabled", EmitDefaultValue = false, IsRequired = false)]
+        public bool? UnsubscribeEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets flag.
+        /// </summary>
+        [DataMember(Name = "flag", EmitDefaultValue = false, IsRequired = false)]
+        public FollowupFlag Flag { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensions.
         /// </summary>
         [DataMember(Name = "extensions", EmitDefaultValue = false, IsRequired = false)]
@@ -169,6 +193,18 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "attachments", EmitDefaultValue = false, IsRequired = false)]
         public IMessageAttachmentsCollectionPage Attachments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IMessageSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IMessageMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
     }
 }

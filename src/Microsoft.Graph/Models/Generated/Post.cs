@@ -86,6 +86,18 @@ namespace Microsoft.Graph
         [DataMember(Name = "attachments", EmitDefaultValue = false, IsRequired = false)]
         public IPostAttachmentsCollectionPage Attachments { get; set; }
     
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IPostSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IPostMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
     }
 }
 

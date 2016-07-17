@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets well known name.
+        /// </summary>
+        [DataMember(Name = "wellKnownName", EmitDefaultValue = false, IsRequired = false)]
+        public string WellKnownName { get; set; }
+    
+        /// <summary>
         /// Gets or sets contacts.
         /// </summary>
         [DataMember(Name = "contacts", EmitDefaultValue = false, IsRequired = false)]
@@ -43,6 +49,18 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "childFolders", EmitDefaultValue = false, IsRequired = false)]
         public IContactFolderChildFoldersCollectionPage ChildFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IContactFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IContactFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
     }
 }

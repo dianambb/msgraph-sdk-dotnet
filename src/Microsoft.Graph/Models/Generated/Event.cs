@@ -183,6 +183,12 @@ namespace Microsoft.Graph
         public string WebLink { get; set; }
     
         /// <summary>
+        /// Gets or sets online meeting url.
+        /// </summary>
+        [DataMember(Name = "onlineMeetingUrl", EmitDefaultValue = false, IsRequired = false)]
+        public string OnlineMeetingUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets calendar.
         /// </summary>
         [DataMember(Name = "calendar", EmitDefaultValue = false, IsRequired = false)]
@@ -205,6 +211,18 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "attachments", EmitDefaultValue = false, IsRequired = false)]
         public IEventAttachmentsCollectionPage Attachments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IEventSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IEventMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
     }
 }

@@ -20,6 +20,42 @@ namespace Microsoft.Graph
     public partial class ReferenceAttachment : Attachment
     {
     
+        /// <summary>
+        /// Gets or sets source url.
+        /// </summary>
+        [DataMember(Name = "sourceUrl", EmitDefaultValue = false, IsRequired = false)]
+        public string SourceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provider type.
+        /// </summary>
+        [DataMember(Name = "providerType", EmitDefaultValue = false, IsRequired = false)]
+        public ReferenceAttachmentProvider? ProviderType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [DataMember(Name = "thumbnailUrl", EmitDefaultValue = false, IsRequired = false)]
+        public string ThumbnailUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preview url.
+        /// </summary>
+        [DataMember(Name = "previewUrl", EmitDefaultValue = false, IsRequired = false)]
+        public string PreviewUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission.
+        /// </summary>
+        [DataMember(Name = "permission", EmitDefaultValue = false, IsRequired = false)]
+        public ReferenceAttachmentPermission? Permission { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is folder.
+        /// </summary>
+        [DataMember(Name = "isFolder", EmitDefaultValue = false, IsRequired = false)]
+        public bool? IsFolder { get; set; }
+    
     }
 }
 

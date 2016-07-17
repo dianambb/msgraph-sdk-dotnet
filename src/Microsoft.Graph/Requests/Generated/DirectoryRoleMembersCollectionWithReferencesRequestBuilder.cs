@@ -47,15 +47,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IDirectoryObjectWithReferenceRequestBuilder"/> for the specified DirectoryRoleDirectoryObject.
+        /// Gets an <see cref="IDirectoryObjectRequestBuilder"/> for the specified DirectoryRoleDirectoryObject.
         /// </summary>
         /// <param name="id">The ID for the DirectoryRoleDirectoryObject.</param>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        public IDirectoryObjectWithReferenceRequestBuilder this[string id]
+        /// <returns>The <see cref="IDirectoryObjectRequestBuilder"/>.</returns>
+        public IDirectoryObjectRequestBuilder this[string id]
         {
             get
             {
-                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new DirectoryObjectRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

@@ -28,11 +28,11 @@ namespace Microsoft.Graph
         IUserCreatedObjectsCollectionWithReferencesRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IDirectoryObjectWithReferenceRequestBuilder"/> for the specified DirectoryObject.
+        /// Gets an <see cref="IDirectoryObjectRequestBuilder"/> for the specified DirectoryObject.
         /// </summary>
         /// <param name="id">The ID for the DirectoryObject.</param>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        IDirectoryObjectWithReferenceRequestBuilder this[string id] { get; }
+        /// <returns>The <see cref="IDirectoryObjectRequestBuilder"/>.</returns>
+        IDirectoryObjectRequestBuilder this[string id] { get; }
         
         /// <summary>
         /// Gets an <see cref="IUserCreatedObjectsCollectionReferencesRequestBuilder"/> for the references in the collection.

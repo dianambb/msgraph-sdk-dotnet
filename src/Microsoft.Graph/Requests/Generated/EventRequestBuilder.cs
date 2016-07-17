@@ -95,6 +95,30 @@ namespace Microsoft.Graph
                 return new EventAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IEventSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        {
+            get
+            {
+                return new EventSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IEventMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IEventMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
+        {
+            get
+            {
+                return new EventMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for EventAccept.
@@ -163,6 +187,19 @@ namespace Microsoft.Graph
             return new EventDismissReminderRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventCancel.
+        /// </summary>
+        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
+        public IEventCancelRequestBuilder Cancel(
+            string Comment = null)
+        {
+            return new EventCancelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
+                this.Client,
+                Comment);
         }
     
     }

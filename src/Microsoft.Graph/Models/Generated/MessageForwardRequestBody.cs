@@ -20,6 +20,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets Message.
+        /// </summary>
+        [DataMember(Name = "Message", EmitDefaultValue = false, IsRequired = false)]
+        public Message Message { get; set; }
+    
+        /// <summary>
         /// Gets or sets Comment.
         /// </summary>
         [DataMember(Name = "Comment", EmitDefaultValue = false, IsRequired = false)]

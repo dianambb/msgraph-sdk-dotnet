@@ -51,6 +51,12 @@ namespace Microsoft.Graph
         public Int32? TotalItemCount { get; set; }
     
         /// <summary>
+        /// Gets or sets well known name.
+        /// </summary>
+        [DataMember(Name = "wellKnownName", EmitDefaultValue = false, IsRequired = false)]
+        public string WellKnownName { get; set; }
+    
+        /// <summary>
         /// Gets or sets messages.
         /// </summary>
         [DataMember(Name = "messages", EmitDefaultValue = false, IsRequired = false)]
@@ -61,6 +67,24 @@ namespace Microsoft.Graph
         /// </summary>
         [DataMember(Name = "childFolders", EmitDefaultValue = false, IsRequired = false)]
         public IMailFolderChildFoldersCollectionPage ChildFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user configurations.
+        /// </summary>
+        [DataMember(Name = "userConfigurations", EmitDefaultValue = false, IsRequired = false)]
+        public IMailFolderUserConfigurationsCollectionPage UserConfigurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// </summary>
+        [DataMember(Name = "singleValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IMailFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// </summary>
+        [DataMember(Name = "multiValueExtendedProperties", EmitDefaultValue = false, IsRequired = false)]
+        public IMailFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
     }
 }

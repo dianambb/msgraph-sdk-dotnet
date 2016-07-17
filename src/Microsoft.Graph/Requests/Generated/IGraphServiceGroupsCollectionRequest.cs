@@ -46,6 +46,13 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IGraphServiceGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        IGraphServiceGroupsCollectionRequest Select(string value);
+
+        /// <summary>
         /// Adds the specified top value to the request.
         /// </summary>
         /// <param name="value">The top value.</param>

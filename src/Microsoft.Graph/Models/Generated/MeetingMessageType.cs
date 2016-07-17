@@ -38,9 +38,9 @@ namespace Microsoft.Graph
         MeetingAccepted,
     
         /// <summary>
-        /// meeting Tenatively Accepted
+        /// meeting Tentatively Accepted
         /// </summary>
-        MeetingTenativelyAccepted,
+        MeetingTentativelyAccepted,
     
         /// <summary>
         /// meeting Declined
